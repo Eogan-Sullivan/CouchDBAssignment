@@ -42,7 +42,7 @@
             // 
             // txtSummary
             // 
-            this.txtSummary.Location = new System.Drawing.Point(27, 189);
+            this.txtSummary.Location = new System.Drawing.Point(29, 200);
             this.txtSummary.Name = "txtSummary";
             this.txtSummary.Size = new System.Drawing.Size(100, 20);
             this.txtSummary.TabIndex = 10;
@@ -50,7 +50,7 @@
             // 
             // txtPercip
             // 
-            this.txtPercip.Location = new System.Drawing.Point(25, 130);
+            this.txtPercip.Location = new System.Drawing.Point(27, 141);
             this.txtPercip.Name = "txtPercip";
             this.txtPercip.Size = new System.Drawing.Size(100, 20);
             this.txtPercip.TabIndex = 9;
@@ -58,7 +58,7 @@
             // 
             // txtTemp
             // 
-            this.txtTemp.Location = new System.Drawing.Point(25, 75);
+            this.txtTemp.Location = new System.Drawing.Point(27, 86);
             this.txtTemp.Name = "txtTemp";
             this.txtTemp.Size = new System.Drawing.Size(100, 20);
             this.txtTemp.TabIndex = 8;
@@ -75,7 +75,7 @@
             // labSkies
             // 
             this.labSkies.AutoSize = true;
-            this.labSkies.Location = new System.Drawing.Point(24, 173);
+            this.labSkies.Location = new System.Drawing.Point(26, 184);
             this.labSkies.Name = "labSkies";
             this.labSkies.Size = new System.Drawing.Size(33, 13);
             this.labSkies.TabIndex = 14;
@@ -84,17 +84,16 @@
             // labPercip
             // 
             this.labPercip.AutoSize = true;
-            this.labPercip.Location = new System.Drawing.Point(22, 114);
+            this.labPercip.Location = new System.Drawing.Point(24, 125);
             this.labPercip.Name = "labPercip";
             this.labPercip.Size = new System.Drawing.Size(65, 13);
             this.labPercip.TabIndex = 13;
             this.labPercip.Text = "Percipitation";
-            this.labPercip.Visible = false;
             // 
             // labTemp
             // 
             this.labTemp.AutoSize = true;
-            this.labTemp.Location = new System.Drawing.Point(22, 59);
+            this.labTemp.Location = new System.Drawing.Point(24, 70);
             this.labTemp.Name = "labTemp";
             this.labTemp.Size = new System.Drawing.Size(67, 13);
             this.labTemp.TabIndex = 12;
@@ -102,12 +101,13 @@
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(25, 228);
+            this.backBtn.Location = new System.Drawing.Point(27, 248);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(237, 23);
             this.backBtn.TabIndex = 16;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // btnSubmit
             // 
@@ -121,7 +121,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(187, 199);
+            this.btnDelete.Location = new System.Drawing.Point(187, 189);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 18;
@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(293, 283);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.backBtn);

@@ -33,17 +33,16 @@
             this.txtTemp = new System.Windows.Forms.TextBox();
             this.txtPercip = new System.Windows.Forms.TextBox();
             this.txtSummary = new System.Windows.Forms.TextBox();
-            this.txtSysTime = new System.Windows.Forms.TextBox();
             this.labTemp = new System.Windows.Forms.Label();
             this.labPercip = new System.Windows.Forms.Label();
             this.labSkies = new System.Windows.Forms.Label();
-            this.labTime = new System.Windows.Forms.Label();
             this.backBtn = new System.Windows.Forms.Button();
+            this.btnViewAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtLoc
             // 
-            this.txtLoc.Location = new System.Drawing.Point(22, 24);
+            this.txtLoc.Location = new System.Drawing.Point(22, 12);
             this.txtLoc.Name = "txtLoc";
             this.txtLoc.Size = new System.Drawing.Size(100, 20);
             this.txtLoc.TabIndex = 0;
@@ -51,7 +50,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(149, 22);
+            this.btnSubmit.Location = new System.Drawing.Point(184, 12);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 1;
@@ -86,15 +85,6 @@
             this.txtSummary.Text = "Clear";
             this.txtSummary.Visible = false;
             // 
-            // txtSysTime
-            // 
-            this.txtSysTime.Location = new System.Drawing.Point(149, 87);
-            this.txtSysTime.Name = "txtSysTime";
-            this.txtSysTime.Size = new System.Drawing.Size(100, 20);
-            this.txtSysTime.TabIndex = 5;
-            this.txtSysTime.Text = "00:00 ";
-            this.txtSysTime.Visible = false;
-            // 
             // labTemp
             // 
             this.labTemp.AutoSize = true;
@@ -125,16 +115,6 @@
             this.labSkies.Text = "Skies";
             this.labSkies.Visible = false;
             // 
-            // labTime
-            // 
-            this.labTime.AutoSize = true;
-            this.labTime.Location = new System.Drawing.Point(146, 71);
-            this.labTime.Name = "labTime";
-            this.labTime.Size = new System.Drawing.Size(30, 13);
-            this.labTime.TabIndex = 9;
-            this.labTime.Text = "Time";
-            this.labTime.Visible = false;
-            // 
             // backBtn
             // 
             this.backBtn.Location = new System.Drawing.Point(22, 248);
@@ -143,18 +123,28 @@
             this.backBtn.TabIndex = 10;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
+            // btnViewAll
+            // 
+            this.btnViewAll.Location = new System.Drawing.Point(184, 201);
+            this.btnViewAll.Name = "btnViewAll";
+            this.btnViewAll.Size = new System.Drawing.Size(75, 23);
+            this.btnViewAll.TabIndex = 11;
+            this.btnViewAll.Text = "View All";
+            this.btnViewAll.UseVisualStyleBackColor = true;
+            this.btnViewAll.Click += new System.EventHandler(this.btnViewAll_Click);
             // 
             // viewWeather
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(293, 283);
+            this.Controls.Add(this.btnViewAll);
             this.Controls.Add(this.backBtn);
-            this.Controls.Add(this.labTime);
             this.Controls.Add(this.labSkies);
             this.Controls.Add(this.labPercip);
             this.Controls.Add(this.labTemp);
-            this.Controls.Add(this.txtSysTime);
             this.Controls.Add(this.txtSummary);
             this.Controls.Add(this.txtPercip);
             this.Controls.Add(this.txtTemp);
@@ -174,11 +164,10 @@
         private System.Windows.Forms.TextBox txtTemp;
         private System.Windows.Forms.TextBox txtPercip;
         private System.Windows.Forms.TextBox txtSummary;
-        private System.Windows.Forms.TextBox txtSysTime;
         private System.Windows.Forms.Label labTemp;
         private System.Windows.Forms.Label labPercip;
         private System.Windows.Forms.Label labSkies;
-        private System.Windows.Forms.Label labTime;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button btnViewAll;
     }
 }

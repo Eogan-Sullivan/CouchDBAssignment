@@ -19,8 +19,8 @@ namespace weatherApp
         public weatherApp()
         {
             InitializeComponent();
-            myInputForm = new inputWeather();
-            myViewForm = new viewWeather();
+            myInputForm = new inputWeather(this);
+            myViewForm = new viewWeather(this);
         }
 
         private void btnViewWeather_Click(object sender, EventArgs e)

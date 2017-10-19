@@ -1,6 +1,4 @@
 ﻿using MyCouch;
-using MyCouch.Requests;
-using MyCouch.Responses;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -19,14 +17,15 @@ namespace weatherApp
         string docId;
         Weather inputs;
         string dbConnect = "http://127.0.0.1:5984/";
+        private weatherApp weatherApp;
 
-        public inputWeather()
+        public inputWeather(weatherApp weatherApp)
         {
             InitializeComponent();
             inputs = new Weather();
+            this.weatherApp = weatherApp;
+
         }
-
-
 
         private async Task WriteToCouchAsync(string docId)
         {
@@ -40,7 +39,9 @@ namespace weatherApp
                     dynamic array = JsonConvert.DeserializeObject<Dictionary<string, string>>(document.Result.Content);
                     inputs.Rev = array["_rev"];
                     inputs.Id = array["_id"];
-                    await client.Documents.PutAsync(inputs.Id, inputs.Rev, "{\"temperature\":\"" + txtTemp.Text + "\",\"percipitation\":\"" + txtPercip.Text + "\",\"Skies\":\"" + txtSummary.Text + "\"}");
+                    await client.Documents.PutAsync(inputs.Id, inputs.Rev, "{\"temperature\":\"" + txtTemp.Text + 
+                                                    "\",\"percipitation\":\"" + txtPercip.Text + "\",\"Skies\":\"" 
+                                                    + txtSummary.Text + "\"}");
                     MessageBox.Show(inputs.Id + " : Updated");
                 }
 
@@ -52,11 +53,8 @@ namespace weatherApp
                                           "\",\"Skies\":\"" + txtSummary.Text + "\"}";
 
                     await client.Documents.PostAsync(createdObject);
+                    MessageBox.Show(txtLoc.Text + " : Created");
                 }
-
-
-
-
             }
         }
 
@@ -84,10 +82,16 @@ namespace weatherApp
                     inputs.Rev = array["_rev"];
                     inputs.Id = array["_id"];
                     await client.Documents.DeleteAsync(inputs.Id,inputs.Rev);
-                    MessageBox.Show("ok");
+                    MessageBox.Show(inputs.Id + ": Deleted");
 
                 }
             }
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            weatherApp.Visible = true;
+            this.Close();
         }
     }
 }
